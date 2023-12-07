@@ -1,7 +1,7 @@
 ## URLSearchParams 方法
 
 
-```
+```js
 // 创建一个URLSearchParams实例
 const urlSearchParams = new URLSearchParams(window.location.search);
 // 把键值对列表转换为一个对象
@@ -12,7 +12,7 @@ const params = Object.fromEntries(urlSearchParams.entries());
 
 split 方法
 
-```
+```js
 function getParams(url) {
   const res = {}
   if (url.includes('?')) {

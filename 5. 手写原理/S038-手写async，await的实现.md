@@ -1,5 +1,5 @@
 
-```
+```js
 
     // const aFunc = () => {
     //   return new Promise((resolve) => {

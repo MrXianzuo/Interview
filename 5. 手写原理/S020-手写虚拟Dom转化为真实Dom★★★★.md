@@ -22,7 +22,7 @@
 }
 
 转化为真实dom
-```
+```js
 <div id="app">
   <span>
     <a></a>

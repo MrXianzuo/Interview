@@ -1,4 +1,4 @@
-```
+```js
 function getData(url) {
   return new Promise((resolve, reject) => {
     $.ajax({

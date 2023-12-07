@@ -10,29 +10,23 @@
 修改webpack.config.js文件，配置loader加载依赖，让其支持外部的less,在原来的代码上添加
 
 
-```
+```js
 // 此种方法在控制台中标签样式显示的是style标签样式
 {
-
-test: /\.less$/,
-
-loader: "style-loader!css-loader!less-loader",
-
+    test: /\.less$/,
+    loader: "style-loader!css-loader!less-loader",
 },
 ```
 
 
 
     
-```
+```js
 // 可以在控制台中看到当前标签样式来自于哪个less文件,调试的时候可以设为true，上线后设为false。优化打包体积可以。
 { 
     test: /\.less$/,
-
     loader: "style-loader!css-loader!less-loader",
-　　
 　　 options: { sourceMap: true }
-
 }
 ```
 

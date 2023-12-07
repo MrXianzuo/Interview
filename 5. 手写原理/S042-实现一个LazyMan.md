@@ -105,7 +105,7 @@ Eat supper
 
 
 实现如下：
-```
+```js
 class _LazyMan {
   constructor(name) {
     this.tasks = []
