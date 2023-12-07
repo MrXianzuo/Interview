@@ -44,7 +44,7 @@ Function.prototype.myApply = function (context, args) {
 
 ## 手写bind函数
 
-```
+```javascript
 Function.prototype.bind1 = function() {
   let args = Array.prototype.slice.call(arguments)
   let t = args.shift()
@@ -56,7 +56,7 @@ Function.prototype.bind1 = function() {
 ```
 
 
-```
+```javascript
 Function.prototype.bind1 = function () { // 这块不可以使用箭头函数，因为 this 的指向不同
   // arguments 可以获取一个函数的所有参数，arguments 是一个伪数组
   // 使用 Array.from() 方法将 arguments 伪数组转化成数组
