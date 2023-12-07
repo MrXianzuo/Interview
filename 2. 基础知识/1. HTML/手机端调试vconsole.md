@@ -43,3 +43,20 @@ if (isDebug) {
 
 
 其他类似工具Eruda
+
+
+## h5字体不局中，有时候会被切掉一块
+当我们写h5时候，加上了line-height和height一致，
+但是还是会碰到andriod 有的机型，如有overflow：hidden会是被切掉头部一两个像素情况
+设置line-height 也不生效
+解决：
+display:flex;
+align-items:center; 或 align-items:baseline;
+
+
+## 1px 像素起因
+原因很简单——CSS 中的 1px 并不能和移动设备上的 1px 划等号。它们之间的比例关系有一个专门的属性来描述：
+```javascript
+// 设备像素比
+window.devicePixelRatio = 设备的物理像素 / CSS像素
+```
