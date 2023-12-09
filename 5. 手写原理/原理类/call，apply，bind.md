@@ -42,7 +42,7 @@ Function.prototype.myApply = function (context, args) {
 };
 ```
 
-## 手写bind函数
+## 手写bind函数(用call，apply实现)
 
 ```javascript
 Function.prototype.bind1 = function() {
@@ -77,3 +77,6 @@ function fn1(a, b, c) {
 const fn2 = fn1.bind1({x: 100}, 10, 20, 30)
 const res = fn2()
 ```
+## 手写bind函数(不用call，apply实现)
+
+## 手写bind考虑new一个bind函数的情况

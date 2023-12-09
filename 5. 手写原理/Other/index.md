@@ -1,3 +1,4 @@
+## 手写一个Object.create
 
 ## 手写一个深度比较函数
 ```js
@@ -64,30 +65,7 @@ isEqual(obj1, obj2) === true
 
 ```
 
-##  手写-new 操作符
-```js
-function myNew(fn, ...args) {
-  let obj = Object.create(fn.prototype);
-  let res = fn.call(obj, ...args);
-  if (res && (typeof res === "object" || typeof res === "function")) {
-    return res;
-  }
-  return obj;
-}
-```
-用法如下：
 
-// // function Person(name, age) {
-// //   this.name = name;
-// //   this.age = age;
-// // }
-// // Person.prototype.say = function() {
-// //   console.log(this.age);
-// // };
-// // let p1 = myNew(Person, "yyy", 18);
-// // console.log(p1.name);
-// // console.log(p1);
-// // p1.say();
 
 
 ## 手写一个Object.is
@@ -181,21 +159,7 @@ for(let i=0;i<=10;i++){   //用var打印的都是11
 
 ```
 
-## 手写instanceOf
-```js
-function myInstanceof(left, right) {
-  while (true) {
-    if (left === null) {
-      return false;
-    }
-    if (left.__proto__ === right.prototype) {
-      return true;
-    }
-    left = left.__proto__;
-  }
-}
 
-```
 
 ## 实现JSON.parse
 
