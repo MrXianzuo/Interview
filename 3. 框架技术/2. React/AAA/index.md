@@ -3,6 +3,8 @@
 - React Hooks
 - React Router
 - React Redux
+- React dom
+- React native
 - React Antd
 ## 说说你对React的理解？有哪些特性？
 
@@ -82,7 +84,7 @@ requestIdleCallback API
 
 ## PureComponent
 
-## Hooks
+## Hooks原理
 
 ## React Hook 的使用限制有哪些？
 
@@ -97,6 +99,11 @@ requestIdleCallback API
 ## 说一种你了解的React状态管理框架
 
 ## 如何分析和调优性能瓶颈？
+diff角度分析
+1. 避免节点跨层级移动
+2. 元素设置key
+3. 减少组件层级的深度
+4. 设置shouldComponentUpdate或者React.pureComponet减少diff次数
 
 ## 如何提升React代码的可维护性？
 
