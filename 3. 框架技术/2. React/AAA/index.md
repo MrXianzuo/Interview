@@ -52,6 +52,16 @@
 ## 说说 Real DOM和Virtual DOM 的区别？优缺点？
 
 ## Diff算法是什么样的？
+1. 标签改变 div -> span，从此处开始的整个子树删掉重建
+2. 类名改变 className1 -> className2，只更新className属性
+3. css属性改变，只更新属性
+
+React 15
+递归解决
+
+React 16
+大任务拆分小任务
+任务划分优先级
 
 ## 说说 React jsx转换成真实DOM 的过程
 
