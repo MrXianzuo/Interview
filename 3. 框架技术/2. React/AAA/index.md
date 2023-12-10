@@ -6,6 +6,8 @@
 - React Antd
 ## 说说你对React的理解？有哪些特性？
 
+## 为什么 React 要用 JSX？
+
 ## 什么是 React Fiber？原理是什么？
 
 ## super()和super(props)有什么区别？
@@ -62,6 +64,9 @@ React 15
 React 16
 大任务拆分小任务
 任务划分优先级
+requestIdleCallback API
+
+## 与其他框架相比，React 的diff算法有什么不同？
 
 ## 说说 React jsx转换成真实DOM 的过程
 
@@ -69,8 +74,34 @@ React 16
 
 ## 如何计算组件的渲染时间
 
+## 如何解释React的渲染流程？
+
+## React 的渲染异常会造成什么后果？
+
+## 如何避免重复渲染？
+
 ## PureComponent
 
 ## Hooks
 
+## React Hook 的使用限制有哪些？
+
+## 谈谈React Hook 的设计模式
+
 ## React Hooks如何模拟组件的生命周期？
+
+## 类组件与函数组件有什么区别？高阶组件与渲染劫持了解多少？
+
+## 如何设计一个React组件？
+
+## 说一种你了解的React状态管理框架
+
+## 如何分析和调优性能瓶颈？
+
+## 如何提升React代码的可维护性？
+
+## useEffect和useLayoutEffect的区别在哪里？
+
+## React Router 的实现原理及工作方式分别是什么？
+
+## React中你常用的工具库有哪些？
