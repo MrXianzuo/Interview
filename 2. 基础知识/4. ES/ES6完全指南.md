@@ -2,7 +2,7 @@
 
 默认参数、模板字符串、解构赋值、箭头函数、Class、Modules、Symbol
 
-## 默认参数
+## 函数的参数的默认值
 
 Old：
 
@@ -82,6 +82,13 @@ var { name, age } = axios.get('xxx').data;
 对象解构、数组解构
 
 ## 箭头函数
+### Q：箭头函数和普通函数有什么区别？
+
+-   箭头函数没有自己的 this 对象，函数体内的 this 是定义时所在的对象而不是使用时所在的对象
+-   不可以当作构造函数，也就是说，不可以对箭头函数使用 new 命令，否者会抛出一个错误
+-   不可以使用 arguments 对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替（[ES6 完全指南](../ES6完全指南.md)）
+-   不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数（[迭代器与生成器](../Iterator&Generator.md)）
+
 
 箭头函数中的 this，就是声明函数时所处上下文中的 this，它不会被其他方式所改变
 
@@ -101,8 +108,7 @@ $('.btn').click(() => {
     this.getData();
 });
 ```
-
-## for of
+## for…of…和for…in…
 
 ### 1. 遍历范围
 
@@ -241,7 +247,8 @@ a = list[0], rest = list.slice(1)
 
 从 ES6 起，JavaScript 的基础数据类型变成了 6 个：string、number、boolean、null、undefined、symbol
 
-## 数组扩展
+## 对象和数组的解构
+### 数组扩展
 
 -   **扩展运算符(...)**：转换数组为用逗号分隔的参数序列(`[...arr]`，相当于`rest/spread参数`的逆运算)
 -   Array.from()：转换具有 `Iterator接口 ` 的数据结构为真正数组，返回新数组
@@ -328,7 +335,7 @@ function findCherries(fruit) {
 console.log(inventory.find(findCherries)); // { name: 'cherries', quantity: 5 }
 ```
 
-## 对象扩展
+### 对象扩展
 
 -   **扩展运算符(...)**：转换对象为用逗号分隔的参数序列(`{ ...obj }`，相当于`rest/spread参数`的逆运算)
 
@@ -340,6 +347,74 @@ console.log(inventory.find(findCherries)); // { name: 'cherries', quantity: 5 }
 -   转换数组为对象：`{ ...[1, 2] }`
 -   与对象解构赋值结合：`const { x, ...rest/spread } = { x: 1, y: 2, z: 3 }`(不能复制继承自原型对象的属性)
 -   修改现有对象部分属性：`const obj = { x: 1, ...{ x: 2 } }`
+
+## Object.hasOwn(obj, propKey)
+
+Object.hasOwn() 方法是比 Object.prototype.hasOwnProperty() 方法更加 便捷 和 安全 的策略。
+例如 Object.create(null) 创建一个不继承自 Object.prototype 的对象，使 hasOwnProperty 方法无法访问。
+
+
+
+```
+Object.create(null).hasOwnProperty("foo")
+// Uncaught TypeError: Object.create(...).hasOwnProperty is not a function
+```
+
+
+
+Object.hasOwn(obj, propKey) 使用案例。
+let object = { foo: false }
+Object.hasOwn(object, "foo") // true
+
+let object2 = Object.create({ foo: true })
+Object.hasOwn(object2, "foo") // false
+
+let object3 = Object.create(null)
+Object.hasOwn(object3, "foo") // false
+
+
+
+
+## 使用Array.prototype.at()简化arr.length
+Array.prototype.at()接收一个正整数或者负整数作为参数，表示获取指定位置的成员
+
+参数正数就表示顺数第几个，负数表示倒数第几个，这可以很方便的某个数组末尾的元素
+
+不存在-0，-0 = 0
+
+```
+var arr = [1, 2, 3, 4, 5]
+// 以前获取最后一位
+console.log(arr[arr.length-1]) //5
+// 简化后
+console.log(arr.at(-1)) // 5
+
+
+
+ar arr = [1, 2, 5, 9, 78]
+
+// 第0个
+console.log(arr.at(0)) // 1
+
+// 正数第一个
+console.log(arr.at(1)) // 2
+
+// 倒数第一个
+console.log(arr.at(-1)) // 78
+
+// 倒数第二个
+console.log(arr.at(-2)) // 9
+```
+那么让你实现下呢？
+```
+function at(n) {
+  n = Math.trunc(n) || 0; // 去掉小数点
+  if (n < 0) n += this.length;
+  if (n < 0 || n >= this.length) return undefined;
+  return this[n];
+}
+```
+
 
 ## 参考资料
 
