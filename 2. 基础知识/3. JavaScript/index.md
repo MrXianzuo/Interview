@@ -3,30 +3,20 @@
 JavaScript 高阶导航
 ## 页面跳转的几种方法
 
+```javascript
 1.
-```javascript
 window.location.replace("www.baidu.com")
-```
 2.
-```javascript
 window.location.href = 'www.baudu.com'
-```
 3.
-```javascript
 window.history.go(-1)   //返回上一页
 window.history.go(-2)   //返回上两页
 window.history.go("www.baudu.com") //跳转
-```
 4.
-```javascript
 window.history.back()   // 返回上一页
-```
 5.
-```javascript
 window.history.forward()   //返回下一页
-```
 6.meta
-```html
 <meta charset="utf-8" http-equiv="refresh" content="3;url=www.baidu.com"> //3秒后跳转到baidu
 ```
 
