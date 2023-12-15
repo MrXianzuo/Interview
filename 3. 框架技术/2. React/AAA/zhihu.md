@@ -188,7 +188,7 @@ class Home extends React.Component {
 ## 18、react的render什么时候渲染？
 react生命周期有三个阶段。 两个阶段都会执行 render 主要从更新和挂载两个阶段来讲，挂载阶段都顺序，更新阶段一定要说shouldComponentUpdate true 和false 分别对应后边是否执行render
 
-1） 挂在阶段
+1） 挂载阶段
 ```
       constructor(){} 
  
