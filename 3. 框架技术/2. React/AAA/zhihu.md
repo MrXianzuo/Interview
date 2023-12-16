@@ -238,6 +238,7 @@ componentDidUpdate
 
 ## 21、知道react里面的createPortal么？说说使用场景。之前react没有这个的时候是怎么实现的，有他没他的区别
 react.createPortal 这个方法是来使用做弹窗Modal组件的,在没有这个组件之前我们可以自己定义组件，然后去实现Modal效果
+
 ```
         Modal.js 
 const styles = { 
