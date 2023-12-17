@@ -228,7 +228,6 @@ useEffect的依赖为饮用类型的时候，可能会导致监听不出发，�
 
 2.如果给组件添加key,如果key值改变的时候，组件将会重新出创建会执行 挂在阶段的生命周期
 
-
 constructor
 
 static getDerivedStateFromProps()
